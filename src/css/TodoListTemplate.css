@@ -1,0 +1,20 @@
+.todo_list_template{
+  width:94%;
+  background:#fff;
+  margin:4rem auto 0 auto;
+  box-shadow:  0px 3px 6px #ccc;
+}
+.title{
+  padding:1rem;
+  font-size:1.8rem;
+  text-align:center;
+  background: rgb(222, 113, 255);
+  color:#fff;
+}
+.form-wrapper{
+  padding:1rem;
+  border-bottom: 1px solid rgb(222, 113, 255);
+}
+.todos-wrapper{
+  min-height:5rem;
+}

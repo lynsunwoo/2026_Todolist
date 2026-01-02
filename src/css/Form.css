@@ -1,0 +1,25 @@
+/* 입력폼 서식 */
+.form{
+  display:flex;
+  padding:1rem;
+}
+.form > input{
+  flex: 1;
+  font-size: 1.25rem;
+  outline:none;
+  border:none;
+  border-bottom: 1px solid  rgb(234, 164, 255);
+}
+/* 추가버튼 서식 */
+.create_btn{
+  padding:0.5rem 1rem;
+  background: rgb(222, 113, 255);
+  border-radius:3px;
+  color:#fff;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+}
+.create_btn:hover{
+  background:  rgb(216, 89, 255);
+}

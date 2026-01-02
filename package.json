@@ -18,6 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://github.com/lynsunwoo/2026_Todolist/",
   "eslintConfig": {
     "extends": [
       "react-app",

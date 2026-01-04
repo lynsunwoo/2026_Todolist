@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 //출력 하는 컴포넌트
 
 
-const TodoItemList = ({todos, onToggle, onRemove}) => {
+const TodoItemList = ({todos, onToggle, onRemove, onUpdate}) => {
   return (
     <>
       {todos.map(({ id, text, checked }) => (
@@ -14,6 +14,7 @@ const TodoItemList = ({todos, onToggle, onRemove}) => {
         checked={checked}
         onToggle={onToggle}
         onRemove={onRemove}
+        onUpdate={onUpdate}
         />
       ))}
     </>

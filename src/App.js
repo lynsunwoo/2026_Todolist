@@ -6,7 +6,6 @@ import './css/TodoItem.css';
 import TodoListTemplate from "./component/TodoListTemplate";
 import Form from './component/Form'; //입력양식 컴포넌트
 import TodoItemList from './component/TodoItemList'; // 출력리스트
-import TodoItem from './component/TodoItem'; // 출력리스트 개당 요소
 
 function App() {
   //리액트 훅(HOOKS)를 사용할 때 useState 작성하면 목록에 뜨고 alt + 클릭시 해당 훅이 문서의 첫번째에 자동으로 추가 작성된다.
@@ -25,7 +24,7 @@ function App() {
   }
 
   //사용자가 마우스 이벤트 없이 엔터키를 누르면 입력이 되도록
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key == 'Enter') {
       handleCreate();
     }
@@ -59,19 +58,35 @@ function App() {
     setInputs('');
   };
 
+  //4. 수정을 위한 기능
+  const onUpdate = (id, newText) =>{
+    setTodos(prev =>
+      prev.map(todo =>
+        todo.id === id? {...todo, text:newText} : todo
+      )
+    );
+  };
+
   return (
-    <TodoListTemplate>
-      < Form
-        value={inputs}
-        onKeyPress={handleKeyPress}
-        onChange={handleChange}
-        onCreate={handleCreate}
-      />
+    <TodoListTemplate
+      form={
+        < Form
+          value={inputs}
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          onCreate={handleCreate}
+        />
+      }
+    >
+
+{/* props 는 컴포넌트 여는 태그 안에서만 써야함. */}
 
       <TodoItemList
         todos={todos}
         onToggle={handleToggle}
         onRemove={handleRemove}
+        //수정을 위한 onUpdate 함수추가
+        onUpdate={onUpdate}
       />
     </TodoListTemplate>
   );
